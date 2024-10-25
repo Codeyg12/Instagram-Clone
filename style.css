@@ -161,7 +161,9 @@ nav {
   position: absolute;
   top: 150px;
   font-size: 200px;
-  color: red;
+  background: linear-gradient(-45deg,  #cf23cf, #f32170, #ff6b08 ); 
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
 }
 
 .liked {
@@ -171,7 +173,9 @@ nav {
 @keyframes tapLike {
   0% {
     opacity: 0;
+    transform: rotate(-30deg)
   }
+
 
   25% {
     opacity: 0.5;
