@@ -304,3 +304,42 @@ nav {
 .img-grid > img {
   width: 135px;
 }
+
+
+.lg-skeleton {
+  display: flex;
+  gap: 10px;
+}
+
+.lg-skeleton-item {
+  width: 300px;
+  height: 400px;
+  background-color: #eee;
+  animation: shimmer 1s infinite linear;
+}
+
+.sm-skeleton {
+  display: flex;
+  gap: 10px;
+}
+
+.sm-skeleton-item {
+  width: 135px;
+  height: 135px;
+  background-color: #eee;
+  animation: shimmer 1s infinite linear;
+}
+
+@keyframes shimmer {
+  0% {
+    opacity: .8;
+    background-color: gray;
+  }
+  100% {
+    opacity: .3;
+  }
+}
+
+.none {
+  display: none;
+}
