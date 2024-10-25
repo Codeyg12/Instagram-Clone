@@ -1,6 +1,6 @@
 let bookmarks = document.querySelectorAll(".bookmark");
 let hearts = document.querySelectorAll(".like");
-let feedImgs = document.querySelectorAll(".feed-img")
+let feedImgs = document.querySelectorAll(".feed-img");
 
 bookmarks.forEach((bookmark) => {
   bookmark.addEventListener("click", () => {
@@ -12,22 +12,33 @@ hearts.forEach((heart) => {
   heart.addEventListener("click", () => {
     heart.classList.toggle("red");
     heart.classList.toggle("material-symbols-rounded");
+  });
 });
+
+feedImgs.forEach((img) => {
+  let lastTap = 0;
+  let likeHeart = img.querySelector(".tap-heart");
+  let sibiling = img.nextElementSibling.querySelector(".like");
+  console.log(sibiling);
+  img.addEventListener("touchstart", () => {
+    const currentTime = new Date().getTime();
+    const tapLength = currentTime - lastTap;
+
+    if (tapLength < 500 && tapLength > 0) {
+      likeHeart.classList.toggle("hidden");
+      likeHeart.classList.toggle("liked");
+      sibiling.classList.toggle("red");
+      sibiling.classList.toggle("material-symbols-rounded");
+    }
+    lastTap = currentTime;
+  });
+
+  img.addEventListener("dblclick", () => {
+    likeHeart.classList.toggle("hidden");
+    likeHeart.classList.toggle("liked");
+    sibiling.classList.toggle("red");
+    sibiling.classList.toggle("material-symbols-rounded");
+  });
 });
-
-feedImgs.forEach(img => {
-    let lastTap = 0
-    // Add double click and double tap functionality
-    img.addEventListener("dblclick", () => {
-        console.log(img);
-        // Get siblings and childeren on image to add the heart
-        
-        // heart.classList.toggle("red");
-        // heart.classList.toggle("material-symbols-rounded");
-
-        // Add a heart animation to appear and then move up the Y axis and disappear
-    })
-})
-
 
 // Finish account page
