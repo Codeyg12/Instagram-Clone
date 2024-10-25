@@ -1,6 +1,7 @@
 let bookmarks = document.querySelectorAll(".bookmark");
 let hearts = document.querySelectorAll(".like");
 let feedImgs = document.querySelectorAll(".feed-img");
+let profileImg = document.querySelector(".img-grid");
 
 bookmarks.forEach((bookmark) => {
   bookmark.addEventListener("click", () => {
@@ -41,4 +42,9 @@ feedImgs.forEach((img) => {
   });
 });
 
-// Finish account page
+for (let i = 0; i < 9; i++) {
+  let img = document.createElement("img");
+  img.setAttribute("src", `https://picsum.photos/20${i}`);
+  img.setAttribute("alt", `img${i}`);
+  profileImg.appendChild(img);
+}
