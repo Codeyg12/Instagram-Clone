@@ -32,8 +32,7 @@ a {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  padding: 100px;
+  height: 85vh;
 }
 
 #login-page form {
@@ -161,7 +160,7 @@ nav {
   position: absolute;
   top: 150px;
   font-size: 200px;
-  background: linear-gradient(-45deg,  #cf23cf, #f32170, #ff6b08 ); 
+  background: linear-gradient(-45deg, #cf23cf, #f32170, #ff6b08);
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
 }
@@ -173,9 +172,8 @@ nav {
 @keyframes tapLike {
   0% {
     opacity: 0;
-    transform: rotate(-30deg)
+    transform: rotate(-30deg);
   }
-
 
   25% {
     opacity: 0.5;
@@ -306,9 +304,10 @@ nav {
 }
 
 .img-grid > img {
-  width: 135px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
-
 
 .lg-skeleton {
   display: flex;
@@ -336,14 +335,36 @@ nav {
 
 @keyframes shimmer {
   0% {
-    opacity: .8;
+    opacity: 0.8;
     background-color: gray;
   }
   100% {
-    opacity: .3;
+    opacity: 0.3;
   }
 }
 
 .none {
   display: none;
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: black;
+}
+
+.phone {
+  border: solid 1px white;
+  border-radius: 20px;
+  width: 500px;
+  height: 750px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0 auto;
+  overflow: auto;
+  scrollbar-width: none;
+  padding: 0 10px 10px;
 }
